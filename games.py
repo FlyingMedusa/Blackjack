@@ -1,4 +1,5 @@
-import random
+# Gry
+# Demonstruje tworzenie modułu
 
 class Player(object):
     """ Uczestnik gry. """
@@ -24,24 +25,9 @@ def ask_number(question, low, high):
         response = int(input(question))
     return response
 
+  
+if __name__ == "__main__":
+    print("Uruchomiłeś ten moduł bezpośrednio (zamiast go zaimportować).")
+    input("\n\nAby zakończyć program, naciśnij klawisz Enter.")
 
-print("Witaj w najprostszej grze na świecie!\n")
-again = None
-while again != "n":
-    players = []
-    num = ask_number(question="Podaj liczbę graczy (2 - 5): ", low=2, high=5)
-
-    for i in range(num):
-        name = input("Nazwa gracza: ")
-        score = random.randrange(100) + 1
-        player = Player(name, score)
-        players.append(player)
-
-    print("\nOto wyniki gry:")
-    for player in players:
-        print(player)
-
-        again = ask_yes_no("\nCzy chcesz zagrać ponownie? (t/n): ")
-
-input("\n\nAby zakończyć program, naciśnij klawisz Enter.")
 
